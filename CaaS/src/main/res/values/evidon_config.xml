@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- System -->
+    <!-- HTTP connect and read timeouts, in millis -->
+    <integer name="evidon_http_connect_timeout">15000</integer>
+    <integer name="evidon_http_read_timeout">10000</integer>
+
+</resources>

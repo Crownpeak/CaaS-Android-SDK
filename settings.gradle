@@ -1,0 +1,3 @@
+include ':CaaS'
+include ':app'
+rootProject.name = "Privacy_CaaS"

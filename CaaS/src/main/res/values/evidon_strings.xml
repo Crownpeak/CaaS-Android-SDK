@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text of the Please-wait message that is displayed while downloading the app-notice preferences -->
+    <string name="evidon_pleaseWait" >Please Wait…</string>
+
+</resources>

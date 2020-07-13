@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+
+
+
+// This is the library version used when deploying the artifact
+version = "1.0.0"
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName version
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+}
+
+subprojects {
+    tasks.withType(Javadoc).all { enabled = false }
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
+ext {
+    bintrayRepo = 'maven' // Repo name in Bintray dashboard
+    bintrayName = 'caas' // package name of the bintray repo
+
+    publishedGroupId = 'com.evidon.privacy.caassdk'   // this is the ID we want to see in implementation line
+    libraryName = 'CaaS'     // this is the module name of library
+    artifact = 'caas'        // this is the artifact we want to see in implementation line
+
+    libraryDescription = 'Plugin to facilitate privacy preference management.' // description of library
+
+    siteUrl = 'https://github.com/evidon/CaaS-Android'    // git repo url
+    gitUrl = 'https://github.com/evidon/CaaS-Android.git' // git repo vcs url
+
+    libraryVersion = version      // library version
+
+    developerId = 'evidon'                // This is your bintray username
+    developerName = 'Vinay Chencharam'              // Developer's name
+    developerEmail = 'vinay.chencharam@crownpeak.com'                // Developer's email
+
+    licenseName = 'The Apache Software License, Version 2.0'  // for example, The Apache Software License, Version 2.0
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'   // for example, http://www.apache.org/licenses/LICENSE-2.0.txt
+    allLicenses = ["Apache-2.0"]    // array of licenses, for example, ["Apache-2.0"]
+}
+
+
+apply from: 'publish.gradle'

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.evidon.privacy_caas.widgets.ThemedPreferenceCategory android:title="Privacy">
+
+        <Preference
+            android:key="privacy_preferences_selector"
+            android:summary="We care about your privacy and data security"
+            android:title="Privacy Preferences" />
+        <Preference
+            android:key="age_gate_selector"
+            android:summary="Verify your age here"
+            android:title="Age Verification" />
+
+    </com.evidon.privacy_caas.widgets.ThemedPreferenceCategory>
+
+    <com.evidon.privacy_caas.widgets.ThemedPreferenceCategory android:title="Data">
+
+        <Preference
+            android:key="information_we_collect_selector"
+            android:summary="We care about your privacy and data security"
+            android:title="Information we Collect" />
+
+    </com.evidon.privacy_caas.widgets.ThemedPreferenceCategory>
+
+    <com.evidon.privacy_caas.widgets.ThemedPreferenceCategory android:title="Rights">
+
+        <Preference
+            android:key="do_not_sell_selector"
+            android:summary="We've worked hard to implement tools to help you maintain your Privacy."
+            android:title="Do not Sell my personal information" />
+
+        <Preference
+            android:key="dsar_selector"
+            android:summary="We care about your privacy and data security"
+            android:title="Data Subject Access Rights" />
+
+    </com.evidon.privacy_caas.widgets.ThemedPreferenceCategory>
+
+</PreferenceScreen>
